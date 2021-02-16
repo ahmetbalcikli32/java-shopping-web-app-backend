@@ -5,6 +5,7 @@ import com.ahmetbalcikli.shoppingWebApp.user.validation.UniqueUsername;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
@@ -58,7 +59,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.createAuthorityList(role.name());
+        return AuthorityUtils.createAuthorityList(String.valueOf(new SimpleGrantedAuthority(role.name())));
     }
 
     @Override

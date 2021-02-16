@@ -28,13 +28,4 @@ public class UserController {
         return new GenericResponse("Kullanıcı başarıyla oluşturuldu");
     }
 
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    public ApiError handleValidationException(MethodArgumentNotValidException exception) {
-//        ApiError error = new ApiError(400, "Validation Error", "/api/users");
-//        Map<String, String> validationErrors = new HashMap<>();
-//        exception.getBindingResult().getFieldErrors().forEach(fieldError -> validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage()));
-//        error.setValidationErrors(validationErrors);
-//        return error;
-//    }
 }

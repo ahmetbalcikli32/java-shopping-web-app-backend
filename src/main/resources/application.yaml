@@ -5,9 +5,6 @@ spring:
     username: postgres
     password: 3232
     initialization-mode: always
-  logging:
-    level:
-      org.springframework: DEBUG
 
   jpa:
     show-sql: true
@@ -18,8 +15,3 @@ spring:
         persistence:
           validation:
             mode: none
-
-shopping:
-  app:
-    jwtSecret: SecretKey
-    jwtExpirationMs: 86400000
