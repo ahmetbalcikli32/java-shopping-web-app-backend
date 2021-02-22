@@ -11,6 +11,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
+    @Mapping(source = "cart.id", target = "cartId")
     UserDto convertToDTO(User user);
 
     @InheritInverseConfiguration(name = "convertToDTO")

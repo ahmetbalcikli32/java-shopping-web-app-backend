@@ -1,5 +1,6 @@
 package com.ahmetbalcikli.shoppingWebApp.user.entity;
 
+import com.ahmetbalcikli.shoppingWebApp.entity.Cart;
 import com.ahmetbalcikli.shoppingWebApp.user.validation.UniqueEmail;
 import com.ahmetbalcikli.shoppingWebApp.user.validation.UniqueUsername;
 import lombok.Data;
@@ -56,6 +57,9 @@ public class User implements UserDetails {
 
     @Column(name = "is_enabled")
     private boolean enabled;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Cart cart;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

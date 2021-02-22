@@ -16,17 +16,20 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", length = 50)
+    @Column(name = "title", length = 100)
     private String title;
 
-    @Column(name = "description", length = 255)
-    private String description;
+    @Column(name = "serial_code", length = 30)
+    private String serialCode;
 
     @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
 
     @Column(name = "stock_amount", nullable = false)
     private int stockAmount;
+
+    @Column(name = "photo_url")
+    private String photoUrl;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "products_fkey_categories"))

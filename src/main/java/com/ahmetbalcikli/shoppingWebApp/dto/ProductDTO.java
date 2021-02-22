@@ -9,9 +9,10 @@ public class ProductDTO {
 
     private Long id;
     private String title;
-    private String description;
+    private String serialCode;
     private BigDecimal price;
     private int stockAmount;
     private long categoryId;
+    private String photoUrl;
 
 }
